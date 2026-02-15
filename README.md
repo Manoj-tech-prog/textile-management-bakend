@@ -1,22 +1,54 @@
-# Textile Management System (Backend)
+# Textile Management System – Backend
 
-## Tech Stack
+A Spring Boot REST API for managing textile production processes such as batch creation, dyeing status, finishing, and dispatch tracking.
+
+This project is designed based on real textile industry workflow and follows clean layered architecture.
+
+---
+
+## 🚀 Tech Stack
 - Java
 - Spring Boot
 - Spring Data JPA
-- PostgreSQL
 - Hibernate
+- PostgreSQL
+- Maven
 
-## Features
+---
+
+## 🏗 Architecture
+The application follows **layered architecture**:
+
+Controller  
+→ Service  
+→ Repository  
+→ Database  
+
+This ensures separation of concerns, maintainability, and scalability.
+
+---
+
+## ✨ Features
 - Create textile batch
-- Update batch details
-- Fetch batch by ID
-- REST APIs using layered architecture
+- Store batch details (color, customer, weight, date)
+- Auto-generated batch number
+- Fetch batch details by ID
+- RESTful APIs
+- ORM using Hibernate (no manual SQL)
 
-## Architecture
-Controller → Service → Repository → Database
+---
 
-## How to Run
-1. Clone repository
-2. Configure application.properties
-3. Run Spring Boot application
+## 📦 Entity Example
+Textile batch contains:
+- Batch Number (Primary Key)
+- Color
+- Customer
+- Weight
+- Date & Time
+
+---
+
+## 🔗 API Endpoints
+
+### Create a batch
+**POST**
