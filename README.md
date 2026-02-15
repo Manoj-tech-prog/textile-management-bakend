@@ -1,12 +1,13 @@
-# Textile Management System – Backend
+# Textile Management Project (Spring Boot)
 
-A Spring Boot REST API for managing textile production processes such as batch creation, dyeing status, finishing, and dispatch tracking.
+This is a backend project built using Spring Boot to understand how real-world textile processes can be handled in a software system.
 
-This project is designed based on real textile industry workflow and follows clean layered architecture.
+I created this project while learning Spring Boot, JPA, and PostgreSQL.  
+The idea is based on how textile batches move through different departments like dyeing, finishing, QC, and dispatch.
 
 ---
 
-## 🚀 Tech Stack
+## Technologies Used
 - Java
 - Spring Boot
 - Spring Data JPA
@@ -16,39 +17,35 @@ This project is designed based on real textile industry workflow and follows cle
 
 ---
 
-## 🏗 Architecture
-The application follows **layered architecture**:
+## Project Structure
+The project follows a simple layered structure:
 
-Controller  
-→ Service  
-→ Repository  
-→ Database  
-
-This ensures separation of concerns, maintainability, and scalability.
+Controller – handles API requests  
+Service – contains business logic  
+Repository – handles database operations  
+Entity – maps Java objects to database tables  
 
 ---
 
-## ✨ Features
-- Create textile batch
-- Store batch details (color, customer, weight, date)
-- Auto-generated batch number
-- Fetch batch details by ID
-- RESTful APIs
-- ORM using Hibernate (no manual SQL)
+## What This Project Does
+- Create a textile batch
+- Store batch details like color, customer, weight, and date
+- Auto-generate batch number
+- Fetch batch details using batch ID
+- Connect Spring Boot with PostgreSQL using JPA
 
 ---
 
-## 📦 Entity Example
-Textile batch contains:
-- Batch Number (Primary Key)
-- Color
-- Customer
-- Weight
-- Date & Time
+## Sample API
 
----
+### Create Batch
+**POST**  
+`/api/textile/batch`
 
-## 🔗 API Endpoints
-
-### Create a batch
-**POST**
+Request body:
+```json
+{
+  "color": "White",
+  "customer": "Levis",
+  "weight": 220
+}
